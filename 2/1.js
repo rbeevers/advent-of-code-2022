@@ -1,7 +1,6 @@
 const fs = require('fs');
 const input = fs.readFileSync('./input.txt', {encoding: 'utf-8'});
 
-
 function main(){
     const inputTranslate = allReplace(input, {'A':'R','X':'R','B':'P','Y':'P','C':'S','Z':'S'});
 
@@ -10,8 +9,6 @@ function main(){
     guideArr.forEach((game, i, arr) => {
         let myHand = game.substring(2,3);
         let theirHand = game.substring(0,1);
-        //console.log(myHand + " - " + theirHand + ' = ' + playGame(theirHand,myHand));
-
     });
 
     let totalScore = guideArr.reduce( function(total, gameStr){
@@ -23,9 +20,7 @@ function main(){
     }, 0 );
 
     console.log('total score: ' + totalScore);
-
 }
-
 
 const allReplace = function(str, obj) {
     for (var x in obj) {
@@ -58,12 +53,9 @@ const gameBonus = {
     'S' : 3,
 }
 
-
 const playGame = (theirHand, myHand) => {
     let total = gameOutcome[myHand][theirHand] + gameBonus[myHand];
     return total;
 }
   
-  
-
 main();

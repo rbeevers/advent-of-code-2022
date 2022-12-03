@@ -2271,7 +2271,6 @@ for (let i = 0; i< listArr.length; i++){
     }
 }
 
-
 elfArr = elfArr.sort(function comp(a,b){
     return a.total - b.total;
 }).reverse();

@@ -18,9 +18,7 @@ function main(inputTxt){
     }
 
     console.log("total:" + totalShared);
-
 }
-
 
 const findMatchingItem = function(sack1Str, sack2Str, sack3Str){
     let sack1Arr = sack1Str.split("");
@@ -45,8 +43,6 @@ const getItemPriority = function(itemStr){
         throw new Error("not alphabet");
     }
     return itemPri;
-
 }
-
 
 main(fs.readFileSync('./input.txt', {encoding: 'utf-8'}));

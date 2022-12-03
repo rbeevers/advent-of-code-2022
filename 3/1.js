@@ -8,29 +8,16 @@ function main(inputTxt){
         let compartment1Str = sackStr.substr(0,(sackStr.length/2));
         let compartment2Str = sackStr.substr((sackStr.length/2),sackStr.length - (sackStr.length/2));
 
-        console.log(compartment1Str);
-        console.log(compartment2Str);
-
         let matchingItem = findMatchingItem(compartment1Str,compartment2Str);
 
-        console.log(matchingItem);
-
         let itemPriority = getItemPriority(matchingItem);
-        console.log(matchingItem + " - " + itemPriority)
 
         return total + itemPriority;
 
     },0);
 
     console.log("total:" + totalShared);
-
-
-
-
-
 }
-
-
 
 const findMatchingItem = function(compartment1Str, compartment2Str){
     let compartment1Arr = compartment1Str.split("");
@@ -52,8 +39,6 @@ const getItemPriority = function(itemStr){
         throw new Error("not alphabet");
     }
     return itemPri;
-
 }
-
 
 main(fs.readFileSync('./input.txt', {encoding: 'utf-8'}));

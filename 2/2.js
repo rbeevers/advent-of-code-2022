@@ -23,9 +23,7 @@ function main(){
     }, 0 );
 
     console.log('total score: ' + totalScore);
-
 }
-
 
 const allReplace = function(str, obj) {
     for (var x in obj) {
@@ -58,12 +56,9 @@ const gameOutcome = {
     },
 }
 
-
 const playGame = (theirHand, myHand) => {
     let total = gameOutcome[theirHand][myHand];
     return total;
 }
   
-  
-
 main();
