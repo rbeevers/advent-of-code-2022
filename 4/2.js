@@ -4,7 +4,7 @@ function main(inputTxt){
  
     const pairArr = inputTxt.split(/\r?\n/);
 
-    let totalFullOverlap = 0;
+    let totalAnyOverlap = 0;
     for(let i=0; i<pairArr.length; i++){
         let elves = pairArr[i].split(","); 
         let elf1 = elves[0].split("-");
@@ -17,11 +17,11 @@ function main(inputTxt){
 
         if( (elf1Low >= elf2Low && elf1Low <= elf2High ) || ( elf1High >= elf2Low && elf1High <= elf2High )
          || (elf2Low >= elf1Low && elf2Low <= elf1High ) || ( elf2High >= elf1Low && elf2High <= elf1High )){
-            totalFullOverlap += 1;
+            totalAnyOverlap += 1;
         }
     }
 
-    console.log("total:" + totalFullOverlap);
+    console.log("total:" + totalAnyOverlap);
 }
 
 main(fs.readFileSync('./input.txt', {encoding: 'utf-8'}));
