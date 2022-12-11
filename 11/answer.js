@@ -46,8 +46,8 @@ const calcMonkeyBusiness = (monkeys, rounds, worryReduction=3) => {
                 let item = monkey.items.shift();
                 monkey.inspected++;
                 item = eval(monkey.operation.replaceAll("old", item));
-                item = item % lcm;
                 item = Math.floor(item/worryReduction);
+                item = item % lcm;
                 if(item%monkey.test === 0){
                     monkeys[monkey.ifTrue].items.push(item);
                 }else{    
